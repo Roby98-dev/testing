@@ -104,6 +104,8 @@ function capitalizeLetters(str) {
 	// });
 }
 
+
+
 function maxCharacter(str) {
 	const charMap = {};
 	let maxNum = 0;
@@ -127,6 +129,8 @@ function maxCharacter(str) {
 	return maxChar;
 }
 
+
+
 function longestWord(sen) {
 	const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g);
 
@@ -145,6 +149,8 @@ function longestWord(sen) {
 	}
 }
 
+
+
 function chunkArray(arr, len) {
 	const chunkArray = [];
 
@@ -157,6 +163,8 @@ function chunkArray(arr, len) {
 
 	return chunkArray;
 }
+
+
 
 function flattenArr(arrays) {
 	return [].concat.apply([], arrays);
@@ -191,5 +199,38 @@ function letterChanges(str) {
 	return nweStr;
 }
 
-const output = letterChanges('Hello world');
+// Push the 0 to end;
+// Sun Media Test
+
+function test1(arr) {
+	arr.push(arr.splice(arr.indexOf(0), 1)[0]);
+
+	return arr;
+}
+
+
+
+function test2(arr) {
+    for (let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] === 0) {
+            arr.splice(i, 1);
+            arr.push(0);
+        }
+    }
+    return arr;
+}
+
+
+
+function test3(arr) {
+    for (let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] === 0) {
+            arr.splice(i, 1);
+            arr.push(0);
+        }
+    }
+    return arr;
+}
+
+const output = test3([0, 4, 8, 3, 0, 1]);
 console.log(output);
